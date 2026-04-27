@@ -54,6 +54,7 @@ for col in model_cols:
         input_encoded[col] = 0
 
 input_encoded = input_encoded[model_cols]
+input_encoded = input_encoded.reindex(columns=model_cols, fill_value=0)
 input_encoded = scaler.transform(input_encoded)
 
 
