@@ -49,12 +49,8 @@ input_encoded = pd.get_dummies(input_data)
 
 model_cols = pickle.load(open("model_cols.pkl", "rb"))
 
-for col in model_cols:
-    if col not in input_encoded.columns:
-        input_encoded[col] = 0
-
-input_encoded = input_encoded[model_cols]
 input_encoded = input_encoded.reindex(columns=model_cols, fill_value=0)
+
 input_encoded = scaler.transform(input_encoded)
 
 
