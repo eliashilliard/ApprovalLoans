@@ -46,8 +46,16 @@ input_data = pd.DataFrame([{
 
 input_encoded = pd.get_dummies(input_data)
 
+model_cols = model.feature_names_in_
+
+for col in model_cols:
+    if col not in input_encoded.columns:
+        input_encoded[col] = 0
 
 input_encoded = input_encoded[model_cols]
+
+model_cols = model.feature_names_in_
+
 
 #Prediction
 if st.button("Predict Approval"):
