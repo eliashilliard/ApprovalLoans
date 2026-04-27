@@ -5,7 +5,7 @@ import pandas as pd
 import numpy as np
 
 # Load model
-model = pickle.load(open("my_model.pkl", "rb"))
+model = pickle.load(open("finalexam458.pkl", "rb"))
 
 st.title("Loan Approval & Lender Optimizer")
 
