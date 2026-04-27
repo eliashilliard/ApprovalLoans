@@ -46,7 +46,7 @@ input_data = pd.DataFrame([{
 
 input_encoded = pd.get_dummies(input_data)
 
-model_cols = model.feature_names_in_
+model_cols = X_train_scaled.columns
 
 for col in model_cols:
     if col not in input_encoded.columns:
