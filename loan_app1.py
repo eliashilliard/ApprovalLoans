@@ -6,6 +6,7 @@ import numpy as np
 
 # Load model
 model = pickle.load(open("finalexam458.pkl", "rb"))
+scaler = pickle.load(open("scaler.pkl", "rb"))
 
 st.title("Loan Approval & Lender Optimizer")
 
@@ -53,6 +54,7 @@ for col in model_cols:
         input_encoded[col] = 0
 
 input_encoded = input_encoded[model_cols]
+input_encoded = scaler.transform(input_encoded)
 
 
 #Prediction
